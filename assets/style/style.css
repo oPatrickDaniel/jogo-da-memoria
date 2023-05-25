@@ -52,7 +52,6 @@ h1 {
 
 }
 
-
 .card_front,
 .card_back {
     width: 100%;
@@ -111,7 +110,6 @@ h1 {
 
 /* responsividade */
 @media (max-width: 280px) {
-
     body {
         font-size: 12px;
         gap: 2em;
@@ -127,7 +125,6 @@ h1 {
     #endgame h3 {
         max-width: 400px;
     }
-
 }
 
 @media (min-width: 1024px) {
