@@ -1,6 +1,5 @@
 
 let game = {
-
     //  estados iniciais do jogo
     lock_mode: false,
     card1: null,
@@ -45,13 +44,12 @@ let game = {
 
     //checa se são cartas iguais
     check_math: () => {
-        game.attempt_counter()
+        game.attempt_counter();
         return game.card1.icon === game.card2.icon;
     },
 
     attempt_counter: () => {
-        game.attempts++
-        console.log(game.attempts)
+        game.attempts++;
     },
 
     //desvira as cartas
@@ -70,7 +68,7 @@ let game = {
 
     // checa se o jogo acabou
     check_game_over: () => {
-        return game.cards.filter((cards) => { return !cards.flipped }).length === 0
+        return game.cards.filter((cards) => { return !cards.flipped }).length === 0;
     },
 
     //cria as cartas do tabuleiro
@@ -104,14 +102,12 @@ let game = {
 
     // embaralha as cartas
     shuffle_cards: () => {
-
         let current_index = game.cards.length;
         let random_index = 0;
 
         while (current_index !== 0) {
-
             random_index = Math.floor(Math.random() * current_index);
-            current_index--
+            current_index--;
             [game.cards[random_index], game.cards[current_index]] = [game.cards[current_index], game.cards[random_index]];
         }
     },

@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     game.create_cards_from_techs();
     insert_cards_on_the_board(game.cards);
-    restart_game()
+    restart_game();
 })
 
 function insert_cards_on_the_board(cards) {
@@ -20,7 +20,7 @@ function insert_cards_on_the_board(cards) {
             <div div class="card_back">
             <img class="icon" src="./assets/images/logo.png">
             </div>
-            </div>`
+            </div>`;
     }
 }
 
@@ -28,20 +28,20 @@ function flipped(event) {
     let card = event.currentTarget;
 
     if (game.set_card(card.id)) {
-        //girar a carta clicada;
+        //girar a carta clicada
         card.classList.add("flip");
         if (game.card2) {
 
             if (game.check_math()) {
                 //limpa a carta das memorias
-                game.clear_card()
+                game.clear_card();
 
                 if (game.check_game_over()) {
                     // adiciona a tela de game over
                     let endgame_view = document.getElementById("endgame");
-                    endgame_view.style.display = "flex"
+                    endgame_view.style.display = "flex";
                     // atualiza tentativas
-                    insert_attempts()
+                    insert_attempts();
                 }
 
             } else {
@@ -59,8 +59,8 @@ function flipped(event) {
 }
 
 function insert_attempts() {
-    let attempts = document.getElementById("attempts")
-    attempts.innerText = `Tentativas: ${game.attempts}`
+    let attempts = document.getElementById("attempts");
+    attempts.innerText = `Tentativas: ${game.attempts}`;
 }
 
 function restart_game() {
